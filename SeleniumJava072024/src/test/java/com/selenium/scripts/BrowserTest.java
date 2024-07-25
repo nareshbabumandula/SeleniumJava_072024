@@ -1,6 +1,13 @@
 package com.selenium.scripts;
 
+import java.util.Iterator;
+import java.util.Set;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.WindowType;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -29,7 +36,37 @@ public class BrowserTest {
 		}
 		driver.get("https://www.mycontactform.com");
 		driver.manage().window().maximize();
-		Thread.sleep(3000);
+		System.out.println(driver.getCurrentUrl()); // Browser current URL
+		System.out.println(driver.getTitle()); // Browser tab title
+		String mainWindow = driver.getWindowHandle();
+		System.out.println(driver.getWindowHandle()); // Session ID
+		driver.navigate().to("https://www.mycontactform.com/samples.php");
+		driver.navigate().back();
+		driver.navigate().refresh();
+		Thread.sleep(2000);
+		
+		WebElement aboutUs = driver.findElement(By.linkText("About Us"));
+		aboutUs.sendKeys(Keys.CONTROL, Keys.RETURN);
+		System.out.println(driver.getWindowHandles()); // Session ID's of multiple windows
+		
+		Set<String> windows = driver.getWindowHandles();
+		System.out.println("No of tabs opened are : " + windows.size());
+		
+		Iterator<String> iter = windows.iterator();
+		
+		while (iter.hasNext()) {
+			String childWindow = iter.next();
+			System.out.println("Window session id is : " + childWindow);
+			if (!mainWindow.equals(childWindow)) {
+				driver.switchTo().window(childWindow);
+				driver.findElement(By.id("email")).sendKeys("qatestuser@gmail.com");
+				Thread.sleep(3000);
+				driver.close();
+			}
+		}
+		driver.switchTo().window(mainWindow);
+		driver.findElement(By.id("user")).sendKeys("testuser");
+		Thread.sleep(2000);
 		driver.quit();
 	}
 
