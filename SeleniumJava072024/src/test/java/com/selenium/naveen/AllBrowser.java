@@ -11,6 +11,7 @@ public class AllBrowser {
 		driver.navigate().to("https://makemytrip.com");
 		Thread.sleep(2000);
 		driver.navigate().to("https://www.youtube.com");
+		driver.navigate().to("https://www.facebook.com");
 		Thread.sleep(2000);
 		driver.navigate().back();
 		driver.navigate().forward();
