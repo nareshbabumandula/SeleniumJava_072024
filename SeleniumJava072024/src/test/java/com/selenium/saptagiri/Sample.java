@@ -33,10 +33,6 @@ public class Sample {
 			driver.quit();
 		} finally {
 			WebDriver anotherWindow = new EdgeDriver();
-			
-			
-			
-			
 			anotherWindow.switchTo().newWindow(WindowType.WINDOW);
 			anotherWindow.switchTo().newWindow(WindowType.TAB);
 			if (anotherWindow != null) {
