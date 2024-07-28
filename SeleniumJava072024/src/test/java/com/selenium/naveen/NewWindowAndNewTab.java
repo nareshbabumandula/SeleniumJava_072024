@@ -14,32 +14,33 @@ public class NewWindowAndNewTab {
 		Thread.sleep(5000);
 		dr.navigate().to("https://www.amazon.com");
 		Thread.sleep(5000);
+		dr.quit();
 
 		try {
-			dr.switchTo().newWindow(WindowType.TAB);  //This tab opens in first window only but not in recently opened window
-			Thread.sleep(1000);
-			dr.navigate().to("https://www.eyeglassworld.com/location/search/");
-			Thread.sleep(1000);
+			dr.get("https://www.eyeglassworld.com/location/search/");	
+			Thread.sleep(5000);
+			dr.switchTo().newWindow(WindowType.TAB);  //This tab opens in first window
+			Thread.sleep(5000);
 			dr.switchTo().newWindow(WindowType.WINDOW);
-			Thread.sleep(3000);
+			Thread.sleep(5000);
 			dr.get("https://www.flipkart.com");
-			Thread.sleep(3000);
+			Thread.sleep(5000);
 			dr.switchTo().newWindow(WindowType.TAB);  //This tab opens in first window only but not in recently opened window
-			
+			Thread.sleep(3000);
 			WebDriver dr1 = new ChromeDriver();
-			dr1.get("https://www.flipkart.com");
+			dr1.get("https://www.amazon.com");
 			dr1.switchTo().newWindow(WindowType.TAB);
 			Thread.sleep(3000);
 			dr1.quit();
 		}
 		finally {
-			Set<String> st=dr.getWindowHandles();
-			System.out.println(st);
+			Set<String> gt=dr.getWindowHandles();
+			System.out.println(gt);
 			dr.quit();
 		}
 		WebDriver edg = new EdgeDriver();
 		edg.get("https://www.eyeglassworld.com/location/search/");
-//		edg.switchTo().newWindow(WindowType.WINDOW);
+		edg.switchTo().newWindow(WindowType.WINDOW);
 		Thread.sleep(5000);
 		String str = edg.getWindowHandle();
 		System.out.println(str);
