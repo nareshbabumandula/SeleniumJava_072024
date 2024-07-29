@@ -43,6 +43,7 @@ public class BrowserTest {
 		driver.navigate().to("https://www.mycontactform.com/samples.php");
 		driver.navigate().back();
 		driver.navigate().refresh();
+		System.out.println(driver.getPageSource());
 		Thread.sleep(2000);
 		
 		WebElement aboutUs = driver.findElement(By.linkText("About Us"));
@@ -64,6 +65,7 @@ public class BrowserTest {
 				driver.close();
 			}
 		}
+		
 		driver.switchTo().window(mainWindow);
 		driver.findElement(By.id("user")).sendKeys("testuser");
 		Thread.sleep(2000);
