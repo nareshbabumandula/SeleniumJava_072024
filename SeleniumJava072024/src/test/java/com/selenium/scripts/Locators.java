@@ -133,7 +133,7 @@ public class Locators {
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("//input[@id='user'] | //input[@name='user23523536']")).clear();
 	
-		Thread.sleep(3000);
+		Thread.sleep(4000);
 		driver.quit();
 	}
 
