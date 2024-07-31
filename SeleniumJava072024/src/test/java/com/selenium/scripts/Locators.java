@@ -37,7 +37,7 @@ public class Locators {
 
 		// 4. Using CSS Selector Locator to locate the username field
 		// CSS Syntax : html tag[attribute='value']
-		driver.findElement(By.cssSelector("input[id='user']")).sendKeys("Vinay");
+		driver.findElement(By.cssSelector("input[id='user']")).sendKeys("Krishasai");
 		Thread.sleep(2000);
 		driver.findElement(By.cssSelector("input[id='user']")).clear();
 
