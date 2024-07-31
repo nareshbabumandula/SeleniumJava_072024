@@ -129,7 +129,7 @@ public class Locators {
 		driver.findElement(By.xpath("//input[@id='user' or @name='user']")).clear();
 		
 		// Using xpath with or operator 
-		driver.findElement(By.xpath("//input[@id='user'] | //input[@name='user23523536']")).sendKeys("Gena");
+		driver.findElement(By.xpath("//input[@id='user'] | //input[@name='user23523536']")).sendKeys("Riza");
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("//input[@id='user'] | //input[@name='user23523536']")).clear();
 	
