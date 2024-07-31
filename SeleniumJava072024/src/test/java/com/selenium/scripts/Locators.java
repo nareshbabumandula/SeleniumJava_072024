@@ -42,7 +42,7 @@ public class Locators {
 		driver.findElement(By.cssSelector("input[id='user']")).clear();
 
 		// 5. Using CSS Selector Locator to locate the username field with # as a replacement for ID
-		driver.findElement(By.cssSelector("input#user")).sendKeys("Saiteja");
+		driver.findElement(By.cssSelector("input#user")).sendKeys("Srihari");
 		Thread.sleep(2000);
 		driver.findElement(By.cssSelector("input#user")).clear();
 
@@ -124,16 +124,16 @@ public class Locators {
 		driver.findElement(By.xpath("//input[@id='user' and @name='user']")).clear();
 		
 		// Using xpath with or keyword
-		driver.findElement(By.xpath("//input[@id='user' or @name='user']")).sendKeys("Alex");
+		driver.findElement(By.xpath("//input[@id='user' or @name='user']")).sendKeys("Antony");
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("//input[@id='user' or @name='user']")).clear();
 		
 		// Using xpath with or operator 
-		driver.findElement(By.xpath("//input[@id='user'] | //input[@name='user23523536']")).sendKeys("Gena");
+		driver.findElement(By.xpath("//input[@id='user'] | //input[@name='user23523536']")).sendKeys("Riza");
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("//input[@id='user'] | //input[@name='user23523536']")).clear();
 	
-		Thread.sleep(2000);
+		Thread.sleep(4000);
 		driver.quit();
 	}
 
