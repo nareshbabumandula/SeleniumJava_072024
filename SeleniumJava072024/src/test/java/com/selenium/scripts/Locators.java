@@ -42,7 +42,7 @@ public class Locators {
 		driver.findElement(By.cssSelector("input[id='user']")).clear();
 
 		// 5. Using CSS Selector Locator to locate the username field with # as a replacement for ID
-		driver.findElement(By.cssSelector("input#user")).sendKeys("Saiteja");
+		driver.findElement(By.cssSelector("input#user")).sendKeys("Srihari");
 		Thread.sleep(2000);
 		driver.findElement(By.cssSelector("input#user")).clear();
 
@@ -133,7 +133,7 @@ public class Locators {
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("//input[@id='user'] | //input[@name='user23523536']")).clear();
 	
-		Thread.sleep(3000);
+		Thread.sleep(4000);
 		driver.quit();
 	}
 
