@@ -2,6 +2,7 @@ package com.selenium.scripts;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WindowType;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 public class Locators {
@@ -132,7 +133,18 @@ public class Locators {
 		driver.findElement(By.xpath("//input[@id='user'] | //input[@name='user23523536']")).sendKeys("Ramana");
 		Thread.sleep(2000);
 		driver.findElement(By.xpath("//input[@id='user'] | //input[@name='user23523536']")).clear();
-	
+		
+		//added the following code snippets - Saptagiri
+		driver.switchTo().newWindow(WindowType.TAB);
+		driver.navigate().to("https://www.mycontactform.com/how.php");
+		driver.manage().window().maximize();
+		driver.findElement(By.xpath("//input[@id='user' and @name='user' and @class='txt_log']")).sendKeys("Aariv");
+		driver.findElement(By.xpath("//input[@id='user' and @name='user' and @class='txt_log']")).clear();
+
+		driver.findElement(By.xpath("//input[@id='user' or @name='user' or @class='txt_log']")).sendKeys("Shresta");
+		driver.findElement(By.xpath("//input[@id='user' or @name='user' or @class='txt_log']")).clear();
+		driver.findElement(By.xpath("//img[contains(@class,'test_')]"));
+		
 		Thread.sleep(3000);
 		driver.quit();
 	}
