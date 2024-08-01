@@ -124,8 +124,8 @@ public class Locators {
 		driver.findElement(By.xpath("//input[@id='user' and @name='user']")).clear();
 		
 		// Using xpath with or keyword
-		driver.findElement(By.xpath("//input[@id='user' or @name='user']")).sendKeys("Alex");
-		Thread.sleep(1000);
+		driver.findElement(By.xpath("//input[@id='user' or @name='user']")).sendKeys("Gen");
+		Thread.sleep(2000);
 		driver.findElement(By.xpath("//input[@id='user' or @name='user']")).clear();
 		
 		// Using xpath with or operator 
