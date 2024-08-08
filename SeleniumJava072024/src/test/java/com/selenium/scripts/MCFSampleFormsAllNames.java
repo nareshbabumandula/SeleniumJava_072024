@@ -20,11 +20,11 @@ public class MCFSampleFormsAllNames {
 	public void xpathaxesExamples() throws InterruptedException {
 		try {
 			driver.findElement(By.linkText("Sample Forms")).click();
-			List<WebElement> tabs = driver.findElements(By.xpath("//div[@id='left_col_top']//following-sibling::*"));
+			List<WebElement> tabs = driver.findElements(By.xpath("//div[@id='left_col_top']//following-sibling::li/a"));
 			System.out.println("No of tabs displayed are : " + tabs.size());
 			test.log(LogStatus.PASS, "No of tabs displayed in MCF page are : " + tabs.size());
 			
-			tabs.forEach(tab->System.out.println(tab.getText()));
+//			tabs.forEach(tab->System.out.println(tab.getText()));
 			
 			for (WebElement tab : tabs) {
 				System.out.println("Tab name is : " + tab.getText());
