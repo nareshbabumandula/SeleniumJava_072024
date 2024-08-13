@@ -1,0 +1,11 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite parallel="false" name="Suite">
+	<parameter name="url" value="https://www.mycontactform.com"></parameter>
+    <parameter name="username" value="john"></parameter>
+    <parameter name="password" value="Secure*12"></parameter>
+  <test name="Test">
+    <classes>
+      <class name="com.testng.scripts.TestNGParametersExample"/>
+    </classes>
+  </test> <!-- Test -->
+</suite> <!-- Suite -->
