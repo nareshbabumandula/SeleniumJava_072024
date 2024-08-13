@@ -5,12 +5,12 @@ import org.testng.annotations.BeforeSuite;
 
 public class Generic {
 	
-	@BeforeSuite
+	@BeforeSuite(groups = {"smoke"})
 	public void UserRegistration() {
 		System.out.println("Registration");
 	}
 			
-	@AfterSuite
+	@AfterSuite(groups = {"smoke"})
 	void logout() {
 		System.out.println("Logged out successfully..!");
 	}
