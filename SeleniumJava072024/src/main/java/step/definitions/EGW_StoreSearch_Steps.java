@@ -15,7 +15,7 @@ public class EGW_StoreSearch_Steps {
 
 	WebDriver driver;
 	
-	@Given("As a customer\\/patient")
+	@Given("I access EGW website")
 	public void accessSite() {
 		driver = new ChromeDriver();
 		driver.get("https://www.eyeglassworld.com");
