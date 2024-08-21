@@ -41,13 +41,14 @@ public class DragandDropTest {
 			Thread.sleep(4000);
 			driver.switchTo().defaultContent(); // Exit from the frame
 			driver.findElement(By.linkText("Droppable")).click();
-			driver.switchTo().frame(0);
+			//driver.switchTo().frame(0);
+			driver.switchTo().frame(driver.findElement(By.className("demo-frame")));
 
 			WebElement draggable = driver.findElement(By.id("draggable"));
 			WebElement droppable = driver.findElement(By.id("droppable"));
 			action.dragAndDrop(draggable, droppable).perform();
 			
-			bFlag = driver.findElement(By.xpath("//p[contains(text(),'Dropped123!')]")).isDisplayed();
+			bFlag = driver.findElement(By.xpath("//p[contains(text(),'Dropped!')]")).isDisplayed();
 		} catch (Exception e) {
 			e.printStackTrace();
 			errMsg = e.getMessage();
