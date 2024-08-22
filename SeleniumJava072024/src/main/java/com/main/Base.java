@@ -17,12 +17,14 @@ public class Base {
     // With this implementation, you can use the getDriver() method to obtain a single instance
     // of the WebDriver object throughout your test automation framework.
     
-    // To use the singleton, you can call WebDriverSingleton.getDriver() to get the instance of 
+    // To use the singleton, you can call Base.getDriver() to get the instance of 
     // the driver in your test classes or methods:
     
     public static WebDriver getDriver() {
         if (driver==null) {
             driver = new ChromeDriver();
+        }else if(driver.toString().contains("null")) {
+        	driver = new ChromeDriver();
         }
         return driver;
     }
