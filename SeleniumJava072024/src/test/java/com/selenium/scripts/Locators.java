@@ -76,6 +76,26 @@ public class Locators {
 		Thread.sleep(1000);
 		driver.findElement(By.cssSelector("div:nth-of-type(2)>div>form>fieldset>div>input")).clear();
 
+		// CSS with OR condition
+		driver.findElement(By.cssSelector("input[id='user'],[class='txt_log']")).sendKeys("Ganesh");
+		Thread.sleep(1000);
+		driver.findElement(By.cssSelector("input[id='user'],[class='txt_log']")).clear();
+
+		// CSS with OR condition using wild cards for id and class attributes
+		driver.findElement(By.cssSelector("input#user,.txt_log")).sendKeys("Prem");
+		Thread.sleep(1000);
+		driver.findElement(By.cssSelector("input#user,.txt_log")).clear();
+
+		// CSS with AND condition
+		driver.findElement(By.cssSelector("input[id='user'][class='txt_log']")).sendKeys("Teja");
+		Thread.sleep(1000);
+		driver.findElement(By.cssSelector("input[id='user'][class='txt_log']")).clear();
+
+		// CSS with AND condition with wild cards
+		driver.findElement(By.cssSelector("input#user.txt_log")).sendKeys("Sudheer");
+		Thread.sleep(1000);
+		driver.findElement(By.cssSelector("input#user.txt_log")).clear();
+
 		// Using linkText locator to locate link in a webpage
 		driver.findElement(By.linkText("Sample Forms")).click();
 		Thread.sleep(1000);
@@ -107,32 +127,32 @@ public class Locators {
 		driver.findElement(By.xpath("//form/fieldset/div/input")).sendKeys("Rajini");
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("//form/fieldset/div/input")).clear();
-		
+
 		// Using relative xpath with starts-with
 		driver.findElement(By.xpath("//input[starts-with(@id,'use')]")).sendKeys("Vinay");
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("//input[starts-with(@id,'use')]")).clear();
-		
+
 		// Using relative xpath with contains
 		driver.findElement(By.xpath("//input[contains(@id,'se')]")).sendKeys("Sapthagiri");
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("//input[contains(@id,'se')]")).clear();
-		
+
 		// Using xpath with and keyword
 		driver.findElement(By.xpath("//input[@id='user' and @name='user']")).sendKeys("John");
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("//input[@id='user' and @name='user']")).clear();
-		
+
 		// Using xpath with or keyword
 		driver.findElement(By.xpath("//input[@id='user' or @name='user']")).sendKeys("Gen");
 		Thread.sleep(2000);
 		driver.findElement(By.xpath("//input[@id='user' or @name='user']")).clear();
-		
+
 		// Using xpath with or operator 
 		driver.findElement(By.xpath("//input[@id='user'] | //input[@name='user23523536']")).sendKeys("Gena");
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("//input[@id='user'] | //input[@name='user23523536']")).clear();
-	
+
 		Thread.sleep(2000);
 		driver.quit();
 	}
