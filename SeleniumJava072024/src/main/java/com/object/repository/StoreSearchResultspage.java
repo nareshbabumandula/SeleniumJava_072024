@@ -12,13 +12,13 @@ public class StoreSearchResultspage {
 	WebDriver driver;
 	
 	@FindBy(id="inputStoreValue")
-	private WebElement txtstoreSearch;
+	public WebElement txtstoreSearch;
 	
 	@FindBy(how = How.XPATH, using = "//button[contains(@class, 'a-btn--is-slim m-store-finder__submit')]")
-	private WebElement btnFindStore;
+	public WebElement btnFindStore;
 	
 	@FindBy(xpath = "(//div[@class='Locator-resultsSummary']/h2/span[2])[1]")
-	private WebElement storeName;
+	public WebElement storeName;
 
 	public void enterCityStateZip(String citystatezip) {
 		txtstoreSearch.sendKeys(citystatezip);
