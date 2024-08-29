@@ -43,7 +43,6 @@ public class EGW_StoreSearch_Steps {
 		String actCity = sp.getStoreName();
 		AssertJUnit.assertEquals("Expected city is not found in the store search results..!", "Tampa", actCity);
 		System.out.println("Successfully verified the store search results..!");
-		Base.getDriver().quit();
 	}
 
 	@When("I want to search for an eyeglass store based on {string}")
@@ -58,7 +57,6 @@ public class EGW_StoreSearch_Steps {
 		String actCityStateZip = sp.getStoreName();
 		AssertJUnit.assertEquals("Expected city/state/zip is not found in the store search results..!", expCityStateZip, actCityStateZip);
 		System.out.println("Successfully verified the store search results..!");
-		Base.getDriver().quit();
 	}
 
 	
@@ -84,9 +82,6 @@ public class EGW_StoreSearch_Steps {
 	public void so_that_i_can_see_the_appropriate_store_details() {
 		String actCityStateZip = sp.getStoreName();
 		System.out.println("Store displayed is : " + actCityStateZip);
-		Base.getDriver().quit();
 	}
-
-
 
 }

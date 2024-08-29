@@ -19,7 +19,10 @@ public class StoreSearchResultspage {
 	
 	@FindBy(xpath = "(//div[@class='Locator-resultsSummary']/h2/span[2])[1]")
 	public WebElement storeName;
-
+	
+	@FindBy(xpath = "//canvas[@class='ol-unselectable']")
+	public WebElement googleMap;
+	
 	public void enterCityStateZip(String citystatezip) {
 		txtstoreSearch.sendKeys(citystatezip);
 	}
