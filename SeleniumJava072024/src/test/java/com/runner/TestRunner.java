@@ -6,7 +6,7 @@ import io.cucumber.junit.CucumberOptions;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(features = "src/test/resources",glue={"step.definitions"}, 
-plugin = {"pretty", "html:target/cucumber-reports.html" },tags = "@dryrun")
+plugin = {"pretty", "html:target/cucumber-reports.html", "rerun:target/rerun.txt" },tags = "@dryrun and not @smoke")
 
 public class TestRunner {
 
